@@ -74,10 +74,22 @@
 	  <Compile Update="AddPlantPage.xaml.cs">
 	    <DependentUpon>AddPlantPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="ListSetup.xaml.cs">
+	    <DependentUpon>ListSetup.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ListOfPlants.xaml.cs">
+	    <DependentUpon>ListOfPlants.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="AddPlantPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ListSetup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ListOfPlants.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="testPage.xaml">
