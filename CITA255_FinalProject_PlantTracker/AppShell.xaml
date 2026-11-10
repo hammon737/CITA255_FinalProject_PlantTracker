@@ -6,9 +6,14 @@
     xmlns:local="clr-namespace:CITA255_FinalProject_PlantTracker"
     Title="CITA255_FinalProject_PlantTracker">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="Add A Plant"
+            ContentTemplate="{DataTemplate local:AddPlantPage}"
+            Route="AddingPlants"/>
+    </TabBar>
 </Shell>

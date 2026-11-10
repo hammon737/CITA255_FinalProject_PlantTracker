@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CITA255_FinalProject_PlantTracker.NewPage1"
+             x:Class="CITA255_FinalProject_PlantTracker.AddPlantPage"
              Title="AddPlantPage">
-    <VerticalStackLayout>
-
-        <Grid RowDefinitions="Auto,Auto,*,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+    
+    <ScrollView>
+        
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="2.5*,*,*"
             Padding="24"
-            RowSpacing="14">
+            RowSpacing="14"
+            ColumnSpacing="9">
 
-            <Label Grid.Row="0"
+            <Label Grid.Row="0" Grid.Column="0"
                    Text="Add a Plant!"
                    FontSize="30"
-                   FontAttributes="Bold" />
-            <Entry Grid.Row="3"
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="What's your plant's name?"
+                   FontSize="15"
+                   HorizontalTextAlignment="Start"/>
+            <Entry Grid.Row="2" Grid.Column="0"
                    x:Name="PlantName"
                    Text=""
                    Placeholder="Plant Name"
                    FontSize="18" />
-            <Entry Grid.Row="4"
+            <Label Grid.Row="3" Grid.Column="0"
+                   Text="What type of plant is it?"
+                   FontSize="15"
+                   HorizontalTextAlignment="Start"/>
+            <Entry Grid.Row="4" Grid.Column="0"
                    x:Name="PlantType"
                    Text=""
                    Placeholder="Plant Type"
                    FontSize="18" />
-            <Entry Grid.Row="5"
+            <Label Grid.Row="5" Grid.Column="0"
+                   Text="When do you have to water it?"
+                   FontSize="15"
+                   HorizontalTextAlignment="Start"/>
+            <Entry Grid.Row="6" Grid.Column="0"
                    x:Name="WaterTime"
                    Text=""
                    Placeholder="Water Time"
                    FontSize="18" />
-            <Button Grid.Row="6"
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                   Text="Select your plant avatar:" 
+                   HorizontalTextAlignment="Center"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="Cactus" />
+            <Button Grid.Row="5" Grid.Column="2" Text="Flower"/>
+            <Button Grid.Row="6" Grid.Column="1" Text="Fern"/>
+            <Button Grid.Row="6" Grid.Column="2" Text="Palm"/>
+            <Button Grid.Row="8" Grid.ColumnSpan="3"
                    Text="Add your plant"
                    Clicked="OnAddClicked" />
+            <Label Grid.Row="9" Grid.ColumnSpan="3"
+                    Text="" 
+                    HorizontalTextAlignment="Center" 
+                    x:Name="resultLabel"/>
         </Grid>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
