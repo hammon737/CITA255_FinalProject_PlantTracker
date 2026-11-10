@@ -9,7 +9,6 @@ public partial class AddPlantPage : ContentPage
 
     Plant[] pool =
     {
-
     };
 
     void OnAddClicked(object sender, EventArgs e)
