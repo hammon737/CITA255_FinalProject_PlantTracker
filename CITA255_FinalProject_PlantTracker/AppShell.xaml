@@ -15,5 +15,9 @@
             Title="Add A Plant"
             ContentTemplate="{DataTemplate local:AddPlantPage}"
             Route="AddingPlants"/>
+        <ShellContent
+            Title="Your Plants"
+            ContentTemplate="{DataTemplate local:ListOfPlants}"
+            Route="YourPlants"/>
     </TabBar>
 </Shell>

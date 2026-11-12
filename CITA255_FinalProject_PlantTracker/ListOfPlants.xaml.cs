@@ -1,8 +1,8 @@
 namespace CITA255_FinalProject_PlantTracker;
 
-public partial class NewPage1 : ContentPage
+public partial class ListOfPlants : ContentPage
 {
-	public NewPage1()
+	public ListOfPlants()
 	{
 		InitializeComponent();
 	}

@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CITA255_FinalProject_PlantTracker.NewPage1"
+             xmlns:local ="clr-namespace:CITA255_FinalProject_PlantTracker"
+             x:Class="CITA255_FinalProject_PlantTracker.ListOfPlants"
              Title="ListOfPlants">
-    
+    <VerticalStackLayout>
+        <Grid RowDefinitions="Auto,Auto,*,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+      Padding="24"
+      RowSpacing="14">
+
+            <Label Grid.Row="0"
+           Text="Plant List"
+           FontSize="30"
+           FontAttributes="Bold" />
+
+            <Label Grid.Row="1"
+           x:Name="CountLabel"
+           Text="0 Plants"
+           FontSize="14"
+           TextColor="Gray" />
+
+            <Border Grid.Row="2" Stroke="LightGray" StrokeThickness="1" Padding="4">
+
+                <CollectionView x:Name="PlantView" ItemsSource="{Binding Plants}" ItemsUpdatingScrollMode="KeepLastItemInView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <local:ListSetup/>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                    <CollectionView.EmptyView>
+                        <Label Text="No plants yet."
+                       FontSize="16" TextColor="Gray"
+                       HorizontalOptions="Center" VerticalOptions="Center" />
+                    </CollectionView.EmptyView>
+
+                </CollectionView>
+            </Border>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>
