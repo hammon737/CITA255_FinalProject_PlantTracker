@@ -80,6 +80,9 @@
 	  <Compile Update="ListSetup.xaml.cs">
 	    <DependentUpon>ListSetup.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="PlantDetails.xaml.cs">
+	    <DependentUpon>PlantDetails.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -90,6 +93,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ListSetup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PlantDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

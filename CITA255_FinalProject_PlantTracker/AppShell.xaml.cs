@@ -7,6 +7,7 @@
             InitializeComponent();
             Routing.RegisterRoute("AddingPlants", typeof(AddPlantPage));
             Routing.RegisterRoute("ViewPlants", typeof(ListOfPlants));
+            Routing.RegisterRoute("PlantDet", typeof(PlantDetails));
         }
     }
 }

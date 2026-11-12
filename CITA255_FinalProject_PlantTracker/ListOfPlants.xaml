@@ -10,23 +10,28 @@
       RowSpacing="14">
 
             <Label Grid.Row="0"
-           Text="Plant List"
-           FontSize="30"
-           FontAttributes="Bold" />
+                   Text="Plant List"
+                   FontSize="30"
+                   FontAttributes="Bold" />
 
             <Label Grid.Row="1"
-           x:Name="CountLabel"
-           Text="0 Plants"
-           FontSize="14"
-           TextColor="Gray" />
+                   x:Name="CountLabel"
+                   Text="0 Plants"
+                   FontSize="14"
+                   TextColor="Gray" />
 
             <Border Grid.Row="2" Stroke="LightGray" StrokeThickness="1" Padding="4">
 
-                <CollectionView x:Name="PlantView" ItemsSource="{Binding Plants}" ItemsUpdatingScrollMode="KeepLastItemInView">
+                <CollectionView x:Name="PlantView"  
+                                SelectionMode="Single"
+                                SelectionChanged="OnPlantSelected">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <local:ListSetup/>
+                            <Label Text="{Binding ListMaker}"
+                                   Padding="12,12"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Start"/>
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

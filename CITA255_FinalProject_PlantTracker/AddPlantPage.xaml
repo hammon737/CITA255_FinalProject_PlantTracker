@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:CITA255_FinalProject_PlantTracker"
              x:Class="CITA255_FinalProject_PlantTracker.AddPlantPage"
              Title="AddPlantPage">
     
     <ScrollView>
-        
-        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="2.5*,*,*"
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="2.5*,*,*"
             Padding="24"
             RowSpacing="14"
             ColumnSpacing="9">
@@ -57,6 +58,29 @@
                     Text="" 
                     HorizontalTextAlignment="Center" 
                     x:Name="resultLabel"/>
+            <Border Grid.Row="10" Stroke="LightGray" StrokeThickness="1" Padding="4">
+
+                <CollectionView x:Name="PlantView" 
+                        ItemsSource="{Binding Plants}" 
+                        SelectionMode="Single"
+                        SelectionChanged="OnPlantSelected"
+                        ItemsUpdatingScrollMode="KeepLastItemInView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <local:ListSetup/>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                    <CollectionView.EmptyView>
+                        <Label Text="No plants yet."
+                               FontSize="16" TextColor="Gray"
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+                    </CollectionView.EmptyView>
+
+                </CollectionView>
+            </Border>
         </Grid>
     </ScrollView>
 </ContentPage>

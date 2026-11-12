@@ -9,16 +9,49 @@ public partial class AddPlantPage : ContentPage
     public AddPlantPage()
     {
         InitializeComponent();
+
+        BindingContext = this;
     }
     Plant[] pool =
     {
+
     };
 
-    
+    int next = 0;
 
-    void OnAddClicked(object sender, EventArgs e)
+    public void OnAddClicked(object sender, EventArgs e)
     {
-        Plants.Add(new Plant { PlantNames = PlantName.Text, PlantTypes = PlantType.Text, WateringTimes = WaterTime.Text });
+        string waterTime = WaterTime.Text;
+        if (int.TryParse(waterTime, out int water))
+        {
+            
+        }
+        else
+        {
+            return;
+        }
+        Plants.Add(new Plant { PlantNames = PlantName.Text, PlantTypes = PlantType.Text, WateringTimes = water });
+
+        next++;
+        if (next >= pool.Length)
+        {
+            next = 0;
+        }
+        
+        ListMaker.Names.Add(PlantName.Text);
+        ListMaker.Types.Add(PlantType.Text);
+        ListMaker.Water.Add(water);
+
         resultLabel.Text = "Plant added";
+    }
+
+    private async void OnPlantSelected(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.Count == 0)
+        {
+            return;
+        }
+
+        await Shell.Current.GoToAsync("PlantDet");
     }
 }

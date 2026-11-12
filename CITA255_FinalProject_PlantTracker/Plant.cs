@@ -8,6 +8,6 @@ namespace CITA255_FinalProject_PlantTracker
     {
         public string PlantNames { get; set; }
         public string PlantTypes { get; set; }
-        public string WateringTimes { get; set; }
+        public int WateringTimes { get; set; }
     }
 }
