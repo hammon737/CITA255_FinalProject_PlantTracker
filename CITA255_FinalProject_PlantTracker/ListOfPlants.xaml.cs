@@ -4,26 +4,18 @@ namespace CITA255_FinalProject_PlantTracker;
 
 public partial class ListOfPlants : ContentPage
 {
+	ObservableCollection<Plant> Plants { get; } = ListMaker.userInput;
+
     public ListOfPlants()
 	{
 		InitializeComponent();
 
-	}
-
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-		Refresh();
+        BindingContext = this;
     }
 
-	void Refresh()
-	{
-		List<string> list = new List<string>();
+	
 
-		PlantView.ItemsSource = list;
-	}
-
-	private async void OnPlantSelected(object sender, SelectionChangedEventArgs e)
+    private async void OnPlantSelected(object sender, SelectionChangedEventArgs e)
 	{
 		if (e.CurrentSelection.Count ==0)
 		{

@@ -12,7 +12,7 @@ public partial class AddPlantPage : ContentPage
 
         BindingContext = this;
     }
-    Plant[] pool =
+    public Plant[] pool =
     {
 
     };
@@ -37,10 +37,8 @@ public partial class AddPlantPage : ContentPage
         {
             next = 0;
         }
-        
-        ListMaker.Names.Add(PlantName.Text);
-        ListMaker.Types.Add(PlantType.Text);
-        ListMaker.Water.Add(water);
+
+        ListMaker.userInput = Plants;
 
         resultLabel.Text = "Plant added";
     }

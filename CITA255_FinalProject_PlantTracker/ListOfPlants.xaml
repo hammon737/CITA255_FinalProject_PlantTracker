@@ -23,15 +23,13 @@
             <Border Grid.Row="2" Stroke="LightGray" StrokeThickness="1" Padding="4">
 
                 <CollectionView x:Name="PlantView"  
+                                ItemsSource="{Binding ListMaker.userInput}" 
                                 SelectionMode="Single"
                                 SelectionChanged="OnPlantSelected">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <Label Text="{Binding ListMaker}"
-                                   Padding="12,12"
-                                   VerticalOptions="Start"
-                                   HorizontalOptions="Start"/>
+                            <local:ListSetup/>
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
