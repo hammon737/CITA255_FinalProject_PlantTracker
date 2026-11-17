@@ -100,4 +100,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Pictures\" />
+	</ItemGroup>
+
 </Project>

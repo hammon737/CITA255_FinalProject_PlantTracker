@@ -19,6 +19,26 @@ public partial class AddPlantPage : ContentPage
 
     int next = 0;
 
+    string PAvatar = " ";
+
+    void CPlant(object sender, EventArgs e)
+    {
+        PAvatar = "Cacti";
+    }
+    void FlPlant(object sender, EventArgs e)
+    {
+        PAvatar = "Flower";
+    }
+    void FePlant(object sender, EventArgs e)
+    {
+        PAvatar = "Fern";
+    }
+    void PPlant(object sender, EventArgs e)
+    {
+        PAvatar = "Palm";
+    }
+
+
     public void OnAddClicked(object sender, EventArgs e)
     {
         string waterTime = WaterTime.Text;
@@ -30,7 +50,10 @@ public partial class AddPlantPage : ContentPage
         {
             return;
         }
-        Plants.Add(new Plant { PlantNames = PlantName.Text, PlantTypes = PlantType.Text, WateringTimes = water });
+        Plants.Add(new Plant { PlantNames = PlantName.Text, 
+            PlantTypes = PlantType.Text, 
+            WateringTimes = water,
+            PlantImage = PAvatar});
 
         next++;
         if (next >= pool.Length)

@@ -4,13 +4,14 @@ namespace CITA255_FinalProject_PlantTracker;
 
 public partial class ListOfPlants : ContentPage
 {
-	ObservableCollection<Plant> Plants { get; } = ListMaker.userInput;
+	public ObservableCollection<Plant> newPlants => ListMaker.userInput;
 
     public ListOfPlants()
 	{
 		InitializeComponent();
 
         BindingContext = this;
+
     }
 
 	

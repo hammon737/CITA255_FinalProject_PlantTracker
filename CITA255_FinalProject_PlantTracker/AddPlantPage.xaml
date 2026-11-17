@@ -19,8 +19,9 @@
                    HorizontalTextAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="0"
                    Text="What's your plant's name?"
-                   FontSize="15"
-                   HorizontalTextAlignment="Start"/>
+                   FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="End"/>
             <Entry Grid.Row="2" Grid.Column="0"
                    x:Name="PlantName"
                    Text=""
@@ -28,8 +29,9 @@
                    FontSize="18" />
             <Label Grid.Row="3" Grid.Column="0"
                    Text="What type of plant is it?"
-                   FontSize="15"
-                   HorizontalTextAlignment="Start"/>
+                   FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="End"/>
             <Entry Grid.Row="4" Grid.Column="0"
                    x:Name="PlantType"
                    Text=""
@@ -37,8 +39,9 @@
                    FontSize="18" />
             <Label Grid.Row="5" Grid.Column="0"
                    Text="When do you have to water it?"
-                   FontSize="15"
-                   HorizontalTextAlignment="Start"/>
+                   FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="End"/>
             <Entry Grid.Row="6" Grid.Column="0"
                    x:Name="WaterTime"
                    Text=""
@@ -47,10 +50,24 @@
             <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                    Text="Select your plant avatar:" 
                    HorizontalTextAlignment="Center"/>
-            <Button Grid.Row="5" Grid.Column="1" Text="Cactus" />
-            <Button Grid.Row="5" Grid.Column="2" Text="Flower"/>
-            <Button Grid.Row="6" Grid.Column="1" Text="Fern"/>
-            <Button Grid.Row="6" Grid.Column="2" Text="Palm"/>
+            <Image x:Name="AvatarPic" 
+                   Source ="cactihappy.png" 
+                   Grid.Row="1" 
+                   Grid.RowSpan="4" Grid.Column ="1" 
+                   Grid.ColumnSpan="2" 
+                   HeightRequest="220"/>
+            <Button Grid.Row="5" Grid.Column="1" 
+                    x:Name="Cactus" Text="Cactus" 
+                    Clicked="CPlant"/>
+            <Button Grid.Row="5" Grid.Column="2" 
+                    x:Name="Flower" Text="Flower"
+                     Clicked="FlPlant"/>
+            <Button Grid.Row="6" Grid.Column="1" 
+                    x:Name="Fern" Text="Fern"
+                     Clicked="FePlant"/>
+            <Button Grid.Row="6" Grid.Column="2" 
+                    x:Name="Palm" Text="Palm"
+                     Clicked="PPlant"/>
             <Button Grid.Row="8" Grid.ColumnSpan="3"
                    Text="Add your plant"
                    Clicked="OnAddClicked" />

@@ -23,9 +23,10 @@
             <Border Grid.Row="2" Stroke="LightGray" StrokeThickness="1" Padding="4">
 
                 <CollectionView x:Name="PlantView"  
-                                ItemsSource="{Binding ListMaker.userInput}" 
+                                ItemsSource="{Binding newPlants}" 
                                 SelectionMode="Single"
-                                SelectionChanged="OnPlantSelected">
+                                SelectionChanged="OnPlantSelected"
+                                ItemsUpdatingScrollMode="KeepLastItemInView">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
