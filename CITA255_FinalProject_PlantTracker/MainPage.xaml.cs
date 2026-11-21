@@ -11,10 +11,6 @@
         {
             await Shell.Current.GoToAsync("AddingPlants");
         }
-        private async void SeePlants(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("ViewPlants");
-        }
 
 
     }

@@ -6,11 +6,18 @@ public partial class ListOfPlants : ContentPage
 {
 	public ObservableCollection<Plant> newPlants => ListMaker.userInput;
 
+	List<string> rows = new List<string>();
+
     public ListOfPlants()
 	{
 		InitializeComponent();
 
         BindingContext = this;
+
+		for (int i = 0; i < Waterpage.names.Count; i++)
+		{
+			rows.Add($"{Waterpage.names[i]}");
+		}
 
     }
 
@@ -23,6 +30,11 @@ public partial class ListOfPlants : ContentPage
 			return;
 		}
 
-		await Shell.Current.GoToAsync("PlantDet");
+		string picked = e.CurrentSelection[0].ToString();
+
+		PlantView.SelectedItem = null;
+
+		int index = rows.IndexOf(picked);
+         await Shell.Current.GoToAsync($"PlantDet?index={index+1}");
 	}
 }

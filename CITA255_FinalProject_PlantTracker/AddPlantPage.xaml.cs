@@ -19,23 +19,16 @@ public partial class AddPlantPage : ContentPage
 
     int next = 0;
 
-    string PAvatar = " ";
 
     void CPlant(object sender, EventArgs e)
     {
-        PAvatar = "Cacti";
+        PAvatar.Text = "Cacti";
+        AvatarPic.Source = "cactihappy.png";
     }
     void FlPlant(object sender, EventArgs e)
     {
-        PAvatar = "Flower";
-    }
-    void FePlant(object sender, EventArgs e)
-    {
-        PAvatar = "Fern";
-    }
-    void PPlant(object sender, EventArgs e)
-    {
-        PAvatar = "Palm";
+        PAvatar.Text = "Flower";
+        AvatarPic.Source = "flowerhappy.png";
     }
 
 
@@ -53,7 +46,9 @@ public partial class AddPlantPage : ContentPage
         Plants.Add(new Plant { PlantNames = PlantName.Text, 
             PlantTypes = PlantType.Text, 
             WateringTimes = water,
-            PlantImage = PAvatar});
+            PlantImage = PAvatar.Text});
+        Waterpage.Avatar.Add(AvatarPic.Source);
+        Waterpage.names.Add(PlantName.Text);
 
         next++;
         if (next >= pool.Length)

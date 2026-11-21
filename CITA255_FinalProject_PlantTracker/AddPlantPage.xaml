@@ -53,21 +53,20 @@
             <Image x:Name="AvatarPic" 
                    Source ="cactihappy.png" 
                    Grid.Row="1" 
-                   Grid.RowSpan="4" Grid.Column ="1" 
+                   Grid.RowSpan="5" Grid.Column ="1" 
                    Grid.ColumnSpan="2" 
                    HeightRequest="220"/>
-            <Button Grid.Row="5" Grid.Column="1" 
+            <Label x:Name="PAvatar"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   Text=" "
+                   FontSize="13"/>
+            <Button Grid.Row="6" Grid.Column="1" 
                     x:Name="Cactus" Text="Cactus" 
                     Clicked="CPlant"/>
-            <Button Grid.Row="5" Grid.Column="2" 
+            <Button Grid.Row="6" Grid.Column="2" 
                     x:Name="Flower" Text="Flower"
                      Clicked="FlPlant"/>
-            <Button Grid.Row="6" Grid.Column="1" 
-                    x:Name="Fern" Text="Fern"
-                     Clicked="FePlant"/>
-            <Button Grid.Row="6" Grid.Column="2" 
-                    x:Name="Palm" Text="Palm"
-                     Clicked="PPlant"/>
             <Button Grid.Row="8" Grid.ColumnSpan="3"
                    Text="Add your plant"
                    Clicked="OnAddClicked" />
@@ -75,29 +74,31 @@
                     Text="" 
                     HorizontalTextAlignment="Center" 
                     x:Name="resultLabel"/>
+            
             <Border Grid.Row="10" Stroke="LightGray" StrokeThickness="1" Padding="4">
 
-                <CollectionView x:Name="PlantView" 
-                        ItemsSource="{Binding Plants}" 
-                        SelectionMode="Single"
-                        SelectionChanged="OnPlantSelected"
-                        ItemsUpdatingScrollMode="KeepLastItemInView">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+            <CollectionView x:Name="PlantView"  
+                    ItemsSource="{Binding newPlants}" 
+                    SelectionMode="Single"
+                    SelectionChanged="OnPlantSelected"
+                    ItemsUpdatingScrollMode="KeepLastItemInView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
 
-                            <local:ListSetup/>
+                        <local:ListSetup/>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
 
-                    <CollectionView.EmptyView>
-                        <Label Text="No plants yet."
-                               FontSize="16" TextColor="Gray"
-                               HorizontalOptions="Center" VerticalOptions="Center" />
-                    </CollectionView.EmptyView>
+                <CollectionView.EmptyView>
+                    <Label Text="No plants yet."
+           FontSize="16" TextColor="Gray"
+           HorizontalOptions="Center" VerticalOptions="Center" />
+                </CollectionView.EmptyView>
 
-                </CollectionView>
-            </Border>
+            </CollectionView>
+        </Border>
         </Grid>
+        
     </ScrollView>
 </ContentPage>
