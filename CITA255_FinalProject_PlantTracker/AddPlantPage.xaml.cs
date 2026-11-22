@@ -9,7 +9,7 @@ public partial class AddPlantPage : ContentPage
     public AddPlantPage()
     {
         InitializeComponent();
-
+        addButton.IsEnabled = false;
         BindingContext = this;
     }
     public Plant[] pool =
@@ -23,12 +23,20 @@ public partial class AddPlantPage : ContentPage
     void CPlant(object sender, EventArgs e)
     {
         PAvatar.Text = "Cacti";
+        addButton.IsEnabled = true;
         AvatarPic.Source = "cactihappy.png";
     }
     void FlPlant(object sender, EventArgs e)
     {
         PAvatar.Text = "Flower";
+        addButton.IsEnabled = true;
         AvatarPic.Source = "flowerhappy.png";
+    }
+    void ShPlant(object sender, EventArgs e)
+    {
+        PAvatar.Text = "Shrub";
+        addButton.IsEnabled = true;
+        AvatarPic.Source = "shrubhappy.png";
     }
 
 
@@ -47,8 +55,7 @@ public partial class AddPlantPage : ContentPage
             PlantTypes = PlantType.Text, 
             WateringTimes = water,
             PlantImage = PAvatar.Text});
-        Waterpage.Avatar.Add(AvatarPic.Source);
-        Waterpage.names.Add(PlantName.Text);
+        
 
         next++;
         if (next >= pool.Length)
@@ -57,6 +64,9 @@ public partial class AddPlantPage : ContentPage
         }
 
         ListMaker.userInput = Plants;
+        
+        Waterpage.Avatar.Add(PAvatar.Text);
+        Waterpage.names.Add(PlantName.Text);
 
         resultLabel.Text = "Plant added";
     }

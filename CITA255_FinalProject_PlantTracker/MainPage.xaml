@@ -19,7 +19,10 @@
                 <Image Source ="cactihappy.png" Grid.Row="1" Grid.Column ="0"  
                        HeightRequest="300"
                        HorizontalOptions="End"/>
-                <Image Source ="flowerhappy.png" Grid.Row="1" Grid.Column ="2"  
+                <Image Source ="flowerhappy.png" Grid.Row="1" Grid.Column ="1"  
+                       HeightRequest="300"
+                       HorizontalOptions="Start"/>
+                <Image Source ="shrubhappy.png" Grid.Row="1" Grid.Column ="2"  
                        HeightRequest="300"
                        HorizontalOptions="Start"/>
                 <Button Grid.Row="2" Grid.Column="1"

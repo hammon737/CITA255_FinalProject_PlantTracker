@@ -12,7 +12,6 @@ public partial class PlantDetails : ContentPage
 	    {
 		    InitializeComponent();
             points = 2;
-            plantImage();
         }
     public string Index
     {
@@ -20,15 +19,15 @@ public partial class PlantDetails : ContentPage
         {
             index = int.Parse(value);
 
-            Pic.Source = Waterpage.Avatar[index];
             TitleLabel.Text = Waterpage.names[index];
+            TypeLabel.Text = Waterpage.Avatar[index];
             plantImage();
         }
     }
 
 	void plantImage()
 	{
-        if(Pic.Source.ToString() == "File: cactihappy.png" || Pic.Source.ToString() == "File: cactisad.png" || Pic.Source.ToString() == "File: cactidead.png")
+        if(TypeLabel.Text == "Cacti")
         { 
             if (points == 2)
             {
@@ -43,7 +42,7 @@ public partial class PlantDetails : ContentPage
                 Pic.Source = "cactidead.png";
             }
         }
-        else if (Pic.Source.ToString() == "File: flowerhappy.png" || Pic.Source.ToString() == "File: flowersad.png" || Pic.Source.ToString() == "File: flowerdead.png")
+        else if (TypeLabel.Text == "Flower")
         {
             if (points == 2)
             {
@@ -56,6 +55,21 @@ public partial class PlantDetails : ContentPage
             if (points == 0)
             {
                 Pic.Source = "flowerdead.png";
+            }
+        }
+        else if (TypeLabel.Text == "Shrub")
+        {
+            if (points == 2)
+            {
+                Pic.Source = "shrubhappy.png";
+            }
+            if (points == 1)
+            {
+                Pic.Source = "shrubsad.png";
+            }
+            if (points == 0)
+            {
+                Pic.Source = "shrubdead.png";
             }
         }
     }

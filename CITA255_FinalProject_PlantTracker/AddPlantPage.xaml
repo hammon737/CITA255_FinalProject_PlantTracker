@@ -51,7 +51,7 @@
                    Text="Select your plant avatar:" 
                    HorizontalTextAlignment="Center"/>
             <Image x:Name="AvatarPic" 
-                   Source ="cactihappy.png" 
+                   Source ="empty.png" 
                    Grid.Row="1" 
                    Grid.RowSpan="5" Grid.Column ="1" 
                    Grid.ColumnSpan="2" 
@@ -66,39 +66,20 @@
                     Clicked="CPlant"/>
             <Button Grid.Row="6" Grid.Column="2" 
                     x:Name="Flower" Text="Flower"
-                     Clicked="FlPlant"/>
+                    Clicked="FlPlant"/>
+            <Button Grid.Row="6" Grid.Column="1" 
+                    x:Name="Shrub" Text="Shrub" 
+                    Clicked="ShPlant"/>
             <Button Grid.Row="8" Grid.ColumnSpan="3"
-                   Text="Add your plant"
-                   Clicked="OnAddClicked" />
+                    x:Name="addButton"
+                    Text="Add your plant"
+                    Clicked="OnAddClicked" />
             <Label Grid.Row="9" Grid.ColumnSpan="3"
                     Text="" 
                     HorizontalTextAlignment="Center" 
                     x:Name="resultLabel"/>
-            
-            <Border Grid.Row="10" Stroke="LightGray" StrokeThickness="1" Padding="4">
 
-            <CollectionView x:Name="PlantView"  
-                    ItemsSource="{Binding newPlants}" 
-                    SelectionMode="Single"
-                    SelectionChanged="OnPlantSelected"
-                    ItemsUpdatingScrollMode="KeepLastItemInView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-
-                        <local:ListSetup/>
-
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-
-                <CollectionView.EmptyView>
-                    <Label Text="No plants yet."
-           FontSize="16" TextColor="Gray"
-           HorizontalOptions="Center" VerticalOptions="Center" />
-                </CollectionView.EmptyView>
-
-            </CollectionView>
-        </Border>
         </Grid>
-        
+
     </ScrollView>
 </ContentPage>

@@ -19,6 +19,8 @@ public partial class ListOfPlants : ContentPage
 			rows.Add($"{Waterpage.names[i]}");
 		}
 
+		CountLabel.Text = rows.Count + " Plants";
+
     }
 
 	
@@ -30,11 +32,12 @@ public partial class ListOfPlants : ContentPage
 			return;
 		}
 
+
 		string picked = e.CurrentSelection[0].ToString();
 
 		PlantView.SelectedItem = null;
 
 		int index = rows.IndexOf(picked);
-         await Shell.Current.GoToAsync($"PlantDet?index={index+1}");
+        await Shell.Current.GoToAsync($"PlantDet?index={index+1}");
 	}
 }

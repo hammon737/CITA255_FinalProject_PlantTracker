@@ -4,24 +4,27 @@
              x:Class="CITA255_FinalProject_PlantTracker.PlantDetails"
              Title="PlantDetails">
     <VerticalStackLayout>
-        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
             <Label Grid.Row="0"
                    x:Name="TitleLabel"
                    Text=" "/>
+            <Label Grid.Row="1"
+                   x:Name="TypeLabel"
+                   Text=" "/>
             <Image x:Name="Pic" Source =" " Grid.Row="1" Grid.Column ="1"  HeightRequest="300"/>
-            <Label Grid.Row="2" Grid.ColumnSpan="5"
+            <Label Grid.Row="3" Grid.ColumnSpan="5"
                    Text="Did you water?"
                    x:Name="Name"
                    FontSize="20"
                    VerticalOptions="Center" 
                    HorizontalOptions="Center" />
-            <Button Grid.Row="3" Grid.Column="0"
+            <Button Grid.Row="4" Grid.Column="0"
                    Text="Yes"
                    Clicked="Success"/>
-            <Button Grid.Row="3" Grid.Column="2"
+            <Button Grid.Row="4" Grid.Column="2"
                    Text="No"
                    Clicked="Loss"/>
-            <Label x:Name="Points" Grid.Row="4"
+            <Label x:Name="Points" Grid.Row="5"
                    Text=""
                    FontSize="20"
                    VerticalOptions="Center" 
