@@ -4,9 +4,10 @@ using System.Text;
 
 namespace CITA255_FinalProject_PlantTracker
 {
-    internal class Waterpage
+    public class Waterpage
     {
         public static List<string> Avatar = new List<string>();
         public static List<string> names = new List<string>();
+
     }
 }

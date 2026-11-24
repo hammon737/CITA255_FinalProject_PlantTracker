@@ -67,7 +67,7 @@
             <Button Grid.Row="6" Grid.Column="2" 
                     x:Name="Flower" Text="Flower"
                     Clicked="FlPlant"/>
-            <Button Grid.Row="6" Grid.Column="1" 
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
                     x:Name="Shrub" Text="Shrub" 
                     Clicked="ShPlant"/>
             <Button Grid.Row="8" Grid.ColumnSpan="3"

@@ -8,15 +8,16 @@ public partial class ListOfPlants : ContentPage
 
 	List<string> rows = new List<string>();
 
+
     public ListOfPlants()
 	{
 		InitializeComponent();
 
         BindingContext = this;
 
-		for (int i = 0; i < Waterpage.names.Count; i++)
+		for (int i = 0; i < ListMaker.userInput.Count; i++)
 		{
-			rows.Add($"{Waterpage.names[i]}");
+			rows.Add($"{ListMaker.userInput[i]}");
 		}
 
 		CountLabel.Text = rows.Count + " Plants";
@@ -24,20 +25,19 @@ public partial class ListOfPlants : ContentPage
     }
 
 	
-
     private async void OnPlantSelected(object sender, SelectionChangedEventArgs e)
 	{
-		if (e.CurrentSelection.Count ==0)
+		if (e.CurrentSelection.Count == 0)
 		{
 			return;
 		}
 
 
-		string picked = e.CurrentSelection[0].ToString();
+        string picked = e.CurrentSelection[int.sender].ToString();
 
 		PlantView.SelectedItem = null;
 
 		int index = rows.IndexOf(picked);
-        await Shell.Current.GoToAsync($"PlantDet?index={index+1}");
+        await Shell.Current.GoToAsync($"PlantDet?index={index}");
 	}
 }
