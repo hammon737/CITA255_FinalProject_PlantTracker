@@ -5,13 +5,17 @@
              Title="PlantDetails">
     <VerticalStackLayout>
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-            <Label Grid.Row="0"
+            <Label Grid.Row="0" Grid.ColumnSpan ="3"
                    x:Name="TitleLabel"
-                   Text=" "/>
-            <Label Grid.Row="1"
+                   Text=" "
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Grid.ColumnSpan ="3"
                    x:Name="TypeLabel"
-                   Text=" "/>
-            <Image x:Name="Pic" Source =" " Grid.Row="1" Grid.Column ="1"  HeightRequest="300"/>
+                   Text=" "
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"/>
+            <Image x:Name="Pic" Source =" " Grid.Row="2" Grid.Column ="1"  HeightRequest="300"/>
             <Label Grid.Row="3" Grid.ColumnSpan="5"
                    Text="Did you water?"
                    x:Name="Name"
@@ -24,11 +28,11 @@
             <Button Grid.Row="4" Grid.Column="2"
                    Text="No"
                    Clicked="Loss"/>
-            <Label x:Name="Points" Grid.Row="5"
+            <Label x:Name="Points" Grid.Row="5" Grid.ColumnSpan="3"
                    Text=""
                    FontSize="20"
                    VerticalOptions="Center" 
-                   HorizontalOptions="Start" />
+                   HorizontalOptions="Center"/>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

@@ -32,12 +32,20 @@ public partial class ListOfPlants : ContentPage
 			return;
 		}
 
-
-        string picked = e.CurrentSelection[int.sender].ToString();
+		if (e.CurrentSelection[0] is not Plant picked)
+		{
+			return;
+		}
 
 		PlantView.SelectedItem = null;
 
-		int index = rows.IndexOf(picked);
+		
+
+		int index = ListMaker.userInput.IndexOf(picked);
+		if (index < 0)
+		{
+			return;
+		}
         await Shell.Current.GoToAsync($"PlantDet?index={index}");
 	}
 }

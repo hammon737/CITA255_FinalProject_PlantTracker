@@ -7,26 +7,33 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Grid RowDefinitions="Auto,Auto,Auto" 
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto" 
                   ColumnDefinitions="*,Auto,*" 
                   RowSpacing="14"
                   ColumnSpacing="9">
                 <Label Grid.Row="0" Grid.ColumnSpan="3"
-                        Text="Welcome to Plant Tracker"
+                        Text="Welcome to Plant Tracker!"
                         FontSize="20"
                         VerticalOptions="Center" 
                         HorizontalOptions="Center" />
-                <Image Source ="cactihappy.png" Grid.Row="1" Grid.Column ="0"  
+                <Label Grid.Row="1" Grid.ColumnSpan="3"
+                       Text="Let's grow some plants together!!"
+                       FontSize="20"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       />
+                <Image Source ="cactihappy.png" Grid.Row="2" Grid.Column ="0"  
                        HeightRequest="300"
                        HorizontalOptions="End"/>
-                <Image Source ="flowerhappy.png" Grid.Row="1" Grid.Column ="1"  
+                <Image Source ="flowerhappy.png" Grid.Row="2" Grid.Column ="1"  
+                       HeightRequest="300"
+                       HorizontalOptions="Center"/>
+                <Image Source ="shrubhappy.png" Grid.Row="2" Grid.Column ="2"  
                        HeightRequest="300"
                        HorizontalOptions="Start"/>
-                <Image Source ="shrubhappy.png" Grid.Row="1" Grid.Column ="2"  
-                       HeightRequest="300"
-                       HorizontalOptions="Start"/>
-                <Button Grid.Row="2" Grid.Column="1"
+                <Button Grid.Row="3" Grid.Column="1"
                         Text="Add a Plant"
+                        WidthRequest="500"
                         VerticalOptions="Center"
                         Clicked="AddPlant"/>
             </Grid>
